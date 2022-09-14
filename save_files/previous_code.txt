@@ -1,0 +1,46 @@
+import decimal
+
+while True: #starts a loop till it hits a break
+  try: #testout to see if input works.
+    print("Welcome to Good Burger.")
+    burg = int(input());
+    if burg >= 0:
+      break
+    else:
+      print("Please use a positive input")
+  except:
+    print("Please use a whole number")
+
+while True:
+  try:
+    fries = int(input());
+    if fries >= 0:
+      break
+    else:
+      print("Please use a positive input")
+  except:
+    print("Please use a whole number")
+
+while True:
+  try:
+    drinks = int(input());
+    if drinks >= 0:
+      break
+    else:
+      print("Please use a positive input")
+  except:
+    print("Please use a whole number")
+
+burg_cost = decimal.Decimal('4.50') * int(burg);
+fries_cost = decimal.Decimal('1.50') * int(fries);
+drinks_cost = decimal.Decimal('1.00') * int(drinks);
+total = decimal.Decimal(burg_cost) + decimal.Decimal(fries_cost) + decimal.Decimal(drinks_cost)
+
+print(
+  "Here is your receipt:"
+  f"\n- Good Burgers $4.5 x {burg} = ${burg_cost}"
+  f"\n- French Fries $1.5 x {fries} = ${fries_cost}"
+  f"\n- Drinks       $1.0 x {drinks} = ${drinks_cost}"
+  f"\nTOTAL = ${total}"
+)
+
